@@ -1,0 +1,124 @@
+@import 'utils';
+@import 'vars';
+@import 'type';
+
+@import 'Navbar';
+@import 'Indicator';
+@import 'Welcome';
+@import 'Projects';
+@import 'Work';
+@import 'Contact';
+@import 'Footer';
+
+@import 'responsive';
+
+@import 'graphic-elements';
+@import 'animations';
+@import 'overrides';
+
+// Bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+//consolas doesnt work on phone browsers for some reason
+@font-face {
+    font-family: "Consolas-alt";
+    src: url("//db.onlinewebfonts.com/t/1db29588408eadbd4406aae9238555eb.eot");
+    src: url("//db.onlinewebfonts.com/t/1db29588408eadbd4406aae9238555eb.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1db29588408eadbd4406aae9238555eb.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1db29588408eadbd4406aae9238555eb.woff") format("woff"), url("//db.onlinewebfonts.com/t/1db29588408eadbd4406aae9238555eb.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1db29588408eadbd4406aae9238555eb.svg#Consolas") format("svg");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;700&display=swap');
+
+body {
+    font-family: Consolas, "Consolas-alt", 'Inconsolata', monospace;
+    color: $type-color-primary;
+    background-color: $primary;
+    text-rendering: optimizeLegibility;
+}
+
+
+#content {
+    padding: 0 $custom-gutter;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden !important;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    transform: scale(.5);
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid $secondary;
+    border-color: $secondary transparent $secondary transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#shroud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 998;
+    background: rgb(220, 216, 192);
+    background: linear-gradient(rgba(220, 216, 192, 1) 0%, rgba(220, 216, 192, 1) 63%, rgba(220, 216, 192, 0) 100%);
+    height: 40vh;
+    transform: translateY(-110px);
+}
+
+
+#site-sections {
+    position: fixed;
+    width: 100vw;
+    height: auto;
+    left: 0;
+    top: 0;
+    // overflow: auto;
+    // scroll-snap-type: y mandatory;
+    // scroll-behavior: smooth;
+    display: block;
+    padding: 0 $custom-gutter;
+    transition: transform cubic-bezier(0.77, 0, 0.175, .9) 2000ms;
+    transform: translateY(0);
+}
+
+section {
+    scroll-snap-align: start;
+    position: relative;
+    height: 100vh;
+    padding-top: 40vh;
+    // max-width: 50vw;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 1;
+    transition: 100ms ease-in-out;
+
+    &.hidden {
+        opacity: 0;
+    }
+}

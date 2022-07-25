@@ -1,0 +1,33 @@
+#footer {
+
+    transition: transform 1000ms cubic-bezier(0.77, 0, 0.175, 1);
+    transform: translateY(-100%);
+
+    &.hidden {
+        transform: translateY(100%);
+
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-logo {
+        padding: 25px 0;
+    }
+
+    background-color: $primary;
+    border-top: 1px solid $secondary;
+
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            margin-right: 85px;
+            text-decoration: none !important;
+        }
+    }
+}

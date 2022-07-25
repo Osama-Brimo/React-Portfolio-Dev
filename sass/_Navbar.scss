@@ -1,0 +1,104 @@
+#navbar {
+    transition: transform 1000ms cubic-bezier(0.86, 0, 0.07, 1);
+
+    &.hidden {
+        transform: translateY(-130%);
+    }
+
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-logo {
+        padding: 25px 0;
+    }
+
+    background-color: $primary;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    border-bottom: 1px solid $secondary;
+
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            margin-left: 85px;
+            text-decoration: none !important;
+            color: $secondary;
+
+            &.active {
+                text-decoration: line-through !important;
+            }
+        }
+    }
+
+    #nav-expanded {
+        height: 0;
+        overflow: hidden;
+        transition: 800ms cubic-bezier(0.86, 0, 0.07, 1);
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            // height: 100%;
+            margin-top: 50px;
+
+            a {
+                margin-left: 0 !important;
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 100px;
+            }
+        }
+    }
+
+    #nav-expanded.active {
+        height: calc(100vh - 150px);
+    }
+}
+
+.deco-enter-arrow {
+    height: 15px;
+    width: 8.5px;
+    transform: scale(1.2) translateY(-3px);
+    margin-right: 10px;
+}
+
+.deco-contact {
+    @extend .text-deco-dots;
+    font-weight: bold;
+    user-select: none;
+    position: absolute;
+
+    .deco-contact-arrow-blocks {
+        opacity: 0;
+        transform: translateY(0) translateX(-30px);
+        transition: 500ms ease-in-out;
+    }
+
+
+    .deco-contact-arrow-blocks.active {
+        opacity: 1;
+        transform: translateY(0px) translateX(0px);
+
+
+    }
+
+    .deco-contact-arrow-block {
+        font-size: 12px;
+        margin-left: 40px;
+        margin-top: 5px;
+        cursor: pointer;
+
+        a {
+            color: $secondary  !important;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+#contact {
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    // height: calc( 100vh - $nav-height );
+    .smiley {
+        height: 400px;
+    }
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    font-size: 42px;
+
+    width: 100%;
+    .img {
+        height: 150px;
+        width: auto;
+    }
+    .contact-my-name, .contact-email {
+        font-weight: bold;
+        color: black;
+    }
+
+    .contact-my-name {
+        margin-right: 25px;
+        transform: translateY(15px);
+    }
+
+    .contact-block-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        &* {
+            width: fit-content;
+        }
+    }
+}

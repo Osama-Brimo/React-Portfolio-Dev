@@ -1,0 +1,5 @@
+1. set explicit size for all iamges [x]
+2. cut together work videos [x]
+3. create final animations, and cycle through them if multiple [x]
+4. tweak intersection observer threshold and section sizes []
+5. build and deploy final []

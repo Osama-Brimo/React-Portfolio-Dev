@@ -1,0 +1,52 @@
+
+.text-heading-a {
+    font-size: 48px;
+}
+
+.text-heading-b {
+    font-size: 36px;
+}
+
+.text-body {
+    font-size: 16px;
+}
+
+.text-body-bold {
+    font-size: 16px;
+}
+
+.text-body-alt {
+    font-size: 14px;
+}
+
+.text-muted-custom {
+    color: $type-color-muted;
+}
+
+.text-tiny {
+    font-size: 10px;
+}
+
+.text-deco-dots {
+    font-size: 16px;
+    @extend .type-deco-dots;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.type-deco-dots {
+    &::before {
+        font-size: inherit;
+        content: '::: ';
+    }
+}

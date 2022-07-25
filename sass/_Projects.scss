@@ -1,0 +1,36 @@
+#projects {
+    max-width: 100vw;
+}
+
+.projects-project {
+    max-width: 50vw;
+    margin-bottom: 36px;
+}
+
+.project-top {
+    margin-bottom: 32px;
+    .project-tools {
+        font-style: italic;   
+        font-size: 12px;
+    }
+}
+
+.project-heading {
+    display: flex;
+    align-items: baseline;
+    color: $secondary !important;
+    line-height: 0;
+
+
+    .project-name {
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+
+}
+
+.project-bottom {
+    font-size: 14px;
+}
+
